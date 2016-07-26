@@ -65,3 +65,36 @@ p {
   color: red;
   text-decoration: none;
 }
+
+/* footer */
+
+footer {
+  margin-top: 275px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
