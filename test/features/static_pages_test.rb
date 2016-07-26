@@ -15,4 +15,11 @@ class StaticPagesTest < Capybara::Rails::TestCase
     assert_link 'Rails Tutorial help page'
     assert_link 'Ruby on Rails Tutorial'
   end
+
+  test "about has a link to the book" do
+    visit static_pages_about_path
+    assert_content page, "About"
+    assert_link 'book'
+    assert_link 'Ruby on Rails Tutorial'
+  end
 end
