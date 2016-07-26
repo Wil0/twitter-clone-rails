@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+
   def text
-    @text = '| Ruby on Rails Tutorial Sample App'
+    text = '| Ruby on Rails Tutorial Sample App'
   end
 
   test "should get home" do
@@ -21,6 +22,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_about_url
     assert_response :success
     assert_select "title", "About #{text}"
+  end
+
+  test "should get contact" do
+    get static_pages_contact_url
+    assert_response :success
+    assert_select "title", "Contact #{text}"
   end
 
 end
