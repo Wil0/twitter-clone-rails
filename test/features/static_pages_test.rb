@@ -28,9 +28,36 @@ class StaticPagesTest < Capybara::Rails::TestCase
     assert_link 'Ruby on Rails Tutorial'
   end
 
-  test "contact has a contact link" do
+  test "contact has a contact link to contact us" do
     visit static_pages_contact_url
     assert_content page, "Contact"
     assert_link 'contact page'
+  end
+
+  test 'we can navegate to contact from every page' do
+    visit root_url
+    click_on 'Contact'
+    page.must_have_content 'Contact us'
+    refute_content page, "This is the home page for the"
+  end
+
+  test 'we can navegate to home from every page' do
+    visit root_url
+    click_on 'Home'
+    page.must_have_content 'This is the home page'
+  end
+
+  test 'we can navegate to help from every page' do
+    visit root_url
+    click_on 'Help'
+    page.must_have_content 'Get help on the Ruby'
+    refute_content page, "This is the home page for the"
+  end
+
+  test 'we can navegate to about from every page' do
+    visit root_url
+    click_on 'About'
+    page.must_have_content 'About us'
+    refute_content page, "This is the home page for the"
   end
 end
