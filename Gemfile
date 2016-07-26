@@ -33,7 +33,7 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-capybara'
   gem 'minitest-rails-capybara'
-
+  gem 'rb-readline'
 end
 
 group :production do

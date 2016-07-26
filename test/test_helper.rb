@@ -4,6 +4,8 @@ require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/reporters"
+require 'readline'
+
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
