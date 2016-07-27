@@ -7,6 +7,8 @@ class StaticPagesTest < Capybara::Rails::TestCase
     assert_content page, "This is the home page for the"
     refute_content page, "StaticPages#home"
     assert_link 'Ruby on Rails Tutorial'
+    click_link 'Sign up now!'
+    assert_content 'Sign up here'
   end
 
   test "help content" do
@@ -29,12 +31,16 @@ class StaticPagesTest < Capybara::Rails::TestCase
     assert_link 'contact page'
   end
 
-  test "root page" do
+  test "layput page links" do
     visit root_path
-    assert_link 'Contact'
-    assert_link 'Home'
-    assert_link 'Help'
-    assert_link 'About'
-    assert_link 'News'
+    click_link 'Contact'
+    assert_content 'Contact us'
+    click_link 'Home'
+    assert_content 'Welcome to the Sample App'
+    click_link 'Help'
+    assert_content 'Get help'
+    click_link 'About'
+    assert_content 'About us'
   end
+
 end
